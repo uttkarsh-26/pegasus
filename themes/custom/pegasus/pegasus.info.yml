@@ -7,6 +7,10 @@ base theme: yg_fitness_center
 # Defines libraries group in which we can add css/js.
 libraries:
   - pegasus/global-styling
+  - yg_fitness_center/bootstrap
+  - yg_fitness_center/flexslider
+  - yg_fitness_center/font-awesome
+  - yg_fitness_center/fitness-admin
 
 regions:
   # header: 'Header'
