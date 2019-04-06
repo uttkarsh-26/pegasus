@@ -5,6 +5,6 @@
 function pegasus_theme_suggestions_block_alter(&$suggestions, $variables) {
   // Load theme suggestions for blocks from parent theme.
   foreach ($suggestions as &$suggestion) {
-  $suggestion = str_replace('pegasus_', 'yg_fitness_center', $suggestion);
+  $suggestion = str_replace('pegasus_', 'yg_fitness_center_', $suggestion);
  }
 }
