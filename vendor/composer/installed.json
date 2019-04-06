@@ -2962,6 +2962,9 @@
                 "recurse": false,
                 "replace": false,
                 "merge-extra": false
+            },
+            "patches_applied": {
+                "Session error fix": "https://www.drupal.org/files/issues/2019-04-04/3045349-35-86x.patch"
             }
         },
         "installation-source": "dist",
@@ -6677,17 +6680,17 @@
     },
     {
         "name": "symfony/http-foundation",
-        "version": "v3.4.24",
-        "version_normalized": "3.4.24.0",
+        "version": "v3.4.23",
+        "version_normalized": "3.4.23.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/http-foundation.git",
-            "reference": "61094ca72e8934c6502af5259ef6296eb09aa424"
+            "reference": "9a96d77ceb1fd913c9d4a89e8a7e1be87604be8a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/61094ca72e8934c6502af5259ef6296eb09aa424",
-            "reference": "61094ca72e8934c6502af5259ef6296eb09aa424",
+            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/9a96d77ceb1fd913c9d4a89e8a7e1be87604be8a",
+            "reference": "9a96d77ceb1fd913c9d4a89e8a7e1be87604be8a",
             "shasum": ""
         },
         "require": {
@@ -6698,7 +6701,7 @@
         "require-dev": {
             "symfony/expression-language": "~2.8|~3.0|~4.0"
         },
-        "time": "2019-03-25T07:48:46+00:00",
+        "time": "2019-02-23T15:06:07+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
