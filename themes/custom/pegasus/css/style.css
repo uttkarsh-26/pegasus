@@ -1,5 +1,5 @@
 @media (min-width: 767px) {
-    body {
+    html body {
         background: url(/themes/custom/pegasus/images/gym.jpg) fixed #333;
     }
 }
