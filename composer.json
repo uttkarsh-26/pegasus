@@ -78,6 +78,11 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
+        },
+        "patches": {
+            "drupal/core": {
+                "Session error fix": "https://www.drupal.org/files/issues/2019-04-04/3045349-35-86x.patch"
+            }
         }
     }
 }
