@@ -3,30 +3,26 @@ type: theme
 description: This is a fitness sub theme
 core: 8.x
 # Defines the base theme
-base theme: yg_fitness_center
+base theme: yg_fitness_gym
 # Defines libraries group in which we can add css/js.
 libraries:
   - pegasus/global-styling
 
 regions:
-  # header: 'Header'
-  # main_menu: 'Main Menu'
-
   navigation: 'Navigation'
-  navigation_collapsible: 'Navigation (Collapsible)'
-
-  content: 'Content'
-  sidebar_first: 'Sidebar First'
-  sidebar_second: 'Sidebar Second'
+  primary_menu: 'primary_menu'
+  header: 'Top Bar'
   highlighted: 'Highlighted'
-
-  slider: 'Slider'
-  about: 'About'
-  program: 'Programs'
-  trainer: 'Trainer'
-  testimonial: 'Testimonial'
-  membership_pricing: 'Membership Pricing'
-  contact: 'Contact'
-
-  copyright: 'Copyright'
-  footer: 'Footer'
+  logo: 'logo'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  portfolio: 'portfolio'
+  carousel: 'carousel'
+  blog: 'blog'
+  contact: 'contact'
+  map: 'map'
+  aboutus: 'aboutus'
+  address: 'address'
+  footer: 'footer'
+  social footer: 'social_footer'
