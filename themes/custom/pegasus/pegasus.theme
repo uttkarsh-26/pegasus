@@ -2,9 +2,19 @@
 /**
 * Implements hook_theme_suggestions_HOOK_alter for blocks.
 */
-function pegasus_theme_suggestions_block_alter(&$suggestions, $variables) {
-  // Load theme suggestions for blocks from parent theme.
-  foreach ($suggestions as &$suggestion) {
-  $suggestion = str_replace('pegasus_', 'yg_fitness_center_', $suggestion);
- }
+//function pegasus_theme_suggestions_block_alter(&$suggestions, $variables) {
+//  // Load theme suggestions for blocks from parent theme.
+//  foreach ($suggestions as &$suggestion) {
+//  $suggestion = str_replace('pegasus_', 'yg_fitness_center_', $suggestion);
+// }
+//}
+
+function pegasus_preprocess_html(&$variables) {
+  global $theme;
+  $theme_path = drupal_get_path('theme', 'yg_fitness_center');
+
+  $variables['addon_template'] = '';
+  if(file_exists($theme_path . '/templates/addon/skins.html.twig')){
+    $variables['addon_template'] = 'themes/contrib/yg_fitness_center/templates/addon/skins.html.twig';
+  }
 }
