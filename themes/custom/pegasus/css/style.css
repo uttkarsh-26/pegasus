@@ -2,5 +2,5 @@ div.banner {
     padding: 0 0 0;
 }
 .main-content__section, .sidebar__section {
-    padding-top: 0px;
+    padding-top: 10px;
 }
