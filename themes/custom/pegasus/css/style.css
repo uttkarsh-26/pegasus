@@ -2,4 +2,7 @@
     html body {
         background: url(/themes/custom/pegasus/images/gym.jpg) fixed #333;
     }
+    .bottom-widgets {
+        min-height: 450px;
+    }
 }
