@@ -1,0 +1,32 @@
+name: Pegasus
+type: theme
+description: This is a fitness sub theme
+core: 8.x
+# Defines the base theme
+base theme: yg_fitness_center
+# Defines libraries group in which we can add css/js.
+libraries:
+  - pegasus/global-styling
+
+regions:
+  # header: 'Header'
+  # main_menu: 'Main Menu'
+
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+
+  content: 'Content'
+  sidebar_first: 'Sidebar First'
+  sidebar_second: 'Sidebar Second'
+  highlighted: 'Highlighted'
+
+  slider: 'Slider'
+  about: 'About'
+  program: 'Programs'
+  trainer: 'Trainer'
+  testimonial: 'Testimonial'
+  membership_pricing: 'Membership Pricing'
+  contact: 'Contact'
+
+  copyright: 'Copyright'
+  footer: 'Footer'
