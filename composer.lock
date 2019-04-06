@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a65f1a7524634a20ea4a2e06239d9b2",
+    "content-hash": "04332b0655a3bc3cde3fec8e01d89ed9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3240,57 +3240,6 @@
             "homepage": "https://www.drupal.org/project/token",
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
-            }
-        },
-        {
-            "name": "drupal/yg_fitness_gym",
-            "version": "1.0.0-alpha2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/yg_fitness_gym.git",
-                "reference": "8.x-1.0-alpha2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/yg_fitness_gym-8.x-1.0-alpha2.zip",
-                "reference": "8.x-1.0-alpha2",
-                "shasum": "70e919dc678259e47f4cb299611a4473d2e27ab0"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-theme",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.0-alpha2",
-                    "datestamp": "1532182981",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Karthikeyan R",
-                    "homepage": "https://www.drupal.org/user/3306805"
-                },
-                {
-                    "name": "Pravin Ajaaz",
-                    "homepage": "https://www.drupal.org/user/2910049"
-                }
-            ],
-            "description": "This is Fitness center theme",
-            "homepage": "https://www.drupal.org/project/yg_fitness_gym",
-            "support": {
-                "source": "https://git.drupalcode.org/project/yg_fitness_gym"
             }
         },
         {
