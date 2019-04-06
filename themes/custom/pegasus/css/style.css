@@ -5,4 +5,7 @@
     .bottom-widgets {
         min-height: 450px;
     }
+    .content .contact-form {
+        font-size: 25px;
+    }
 }
