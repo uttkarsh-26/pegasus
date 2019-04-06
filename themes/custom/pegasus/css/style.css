@@ -1,6 +1,3 @@
-div.banner {
-    padding: 0 0 0;
-}
-.main-content__section, .sidebar__section {
-    padding-top: 10px;
+body {
+    background: url(/themes/custom/pegasus/images/gym.jpg) fixed #333;
 }
