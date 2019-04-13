@@ -42,8 +42,7 @@
         "webflo/drupal-core-require-dev": "^8.6.0"
     },
     "conflict": {
-        "drupal/drupal": "*",
-        "symfony/http-foundation": "3.4.24"
+        "drupal/drupal": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -87,11 +86,6 @@
             "initial": {
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
-            }
-        },
-        "patches": {
-            "drupal/core": {
-                "Session error fix": "https://www.drupal.org/files/issues/2019-04-04/3045349-35-86x.patch"
             }
         }
     }
