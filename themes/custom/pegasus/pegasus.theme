@@ -43,15 +43,16 @@ function pegasus_preprocess_page(&$variables)
     $variables['bottom_class_second'] = 'col-sm-6';
     $variables['bottom_class_third'] = 'col-sm-6';
     $variables['bottom_class_fourth'] = 'col-sm-6';
-  } else if (!empty($variables['page']['bottom_first']) && !empty($variables['page']['bottom_second']) && empty($variables['page']['bottom_third']) && empty($variables['page']['bottom_forth'])) {
-    $variables['bottom_class_first'] = 'col-sm-3';
-    $variables['bottom_class_second'] = 'col-sm-9';
   }
   else {
     $variables['bottom_class_first'] = 'col-sm-12';
     $variables['bottom_class_second'] = 'col-sm-12';
     $variables['bottom_class_third'] = 'col-sm-12';
     $variables['bottom_class_fourth'] = 'col-sm-12';
+  }
+  if (!empty($variables['page']['bottom_first']) && !empty($variables['page']['bottom_second']) && empty($variables['page']['bottom_third']) && empty($variables['page']['bottom_forth'])){
+    $variables['bottom_class_first'] = 'col-sm-3';
+    $variables ['bottom_class_second'] = 'col-sm-9';
   }
 
   // Add Responsive class for footer.
