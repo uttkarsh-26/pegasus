@@ -346,7 +346,7 @@
 
 </div>
 
-{% if is_front %}
+{% if is_front and isMobile %}
 <video playsinline autoplay muted loop poster="{{ base_path ~ directory }}/images/gym.jpg" id="bgvid">
   <source src="{{ base_path ~ directory }}/images/gym.mp4" type="video/webm">
 </video>

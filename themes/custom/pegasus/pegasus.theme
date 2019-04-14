@@ -55,6 +55,9 @@ function pegasus_preprocess_page(&$variables)
     $variables ['bottom_class_second'] = 'col-sm-8';
   }
 
+  $is_mobile = isMobileDevice();
+  $variables['isMobile'] = $is_mobile;
+
   // Add Responsive class for footer.
   if (!empty($variables['page']['footer_first']) && !empty($variables['page']['footer_second']) && !empty($variables['page']['footer_third'])) {
     $variables['footer_class'] = 'col-md-3';
@@ -107,4 +110,25 @@ function pegasus_preprocess_page(&$variables)
       $variables['slider_content'] = drupal8_custom_theme_get_slider_content();
     }
   }
+}
+
+function isMobileDevice()
+{
+  $aMobileUA = array(
+    '/iphone/i' => 'iPhone',
+    '/ipod/i' => 'iPod',
+    '/ipad/i' => 'iPad',
+    '/android/i' => 'Android',
+    '/blackberry/i' => 'BlackBerry',
+    '/webos/i' => 'Mobile'
+  );
+
+  //Return true if Mobile User Agent is detected
+  foreach ($aMobileUA as $sMobileKey => $sMobileOS) {
+    if (preg_match($sMobileKey, $_SERVER['HTTP_USER_AGENT'])) {
+      return true;
+    }
+  }
+  //Otherwise return false..
+  return false;
 }
