@@ -51,8 +51,8 @@ function pegasus_preprocess_page(&$variables)
     $variables['bottom_class_fourth'] = 'col-sm-12';
   }
   if (!empty($variables['page']['bottom_first']) && !empty($variables['page']['bottom_second']) && empty($variables['page']['bottom_third']) && empty($variables['page']['bottom_forth'])){
-    $variables['bottom_class_first'] = 'col-sm-3';
-    $variables ['bottom_class_second'] = 'col-sm-9';
+    $variables['bottom_class_first'] = 'col-sm-4';
+    $variables ['bottom_class_second'] = 'col-sm-8';
   }
 
   // Add Responsive class for footer.
