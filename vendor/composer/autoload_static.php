@@ -11,11 +11,10 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
@@ -113,6 +112,7 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
+            'Prophecy\\' => 9,
             'PhpParser\\' => 10,
         ),
         'M' => 
@@ -125,6 +125,7 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
         ),
         'J' => 
         array (
+            'JsonSchema\\' => 11,
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
@@ -141,6 +142,10 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
             'Grasmash\\Expander\\' => 18,
             'Goutte\\' => 7,
         ),
+        'E' => 
+        array (
+            'Egulias\\EmailValidator\\' => 23,
+        ),
         'D' => 
         array (
             'Drush\\Internal\\' => 15,
@@ -155,6 +160,7 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
             'DrupalCodeGenerator\\' => 20,
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Lexer\\' => 22,
             'Doctrine\\Common\\Inflector\\' => 26,
             'Doctrine\\Common\\Collections\\' => 28,
             'Doctrine\\Common\\Cache\\' => 22,
@@ -386,6 +392,10 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'Prophecy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -397,6 +407,10 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
         'League\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/container/src',
+        ),
+        'JsonSchema\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
         ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
@@ -433,6 +447,10 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
         'Goutte\\' => 
         array (
             0 => __DIR__ . '/..' . '/fabpot/goutte/Goutte',
+        ),
+        'Egulias\\EmailValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
         ),
         'Drush\\Internal\\' => 
         array (
@@ -481,6 +499,10 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+        ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
         ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
@@ -574,7 +596,7 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
         array (
             'org\\bovigo\\vfs\\' => 
             array (
-                0 => __DIR__ . '/..' . '/mikey179/vfsStream/src/main/php',
+                0 => __DIR__ . '/..' . '/mikey179/vfsstream/src/main/php',
             ),
         ),
         'W' => 
@@ -600,17 +622,13 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
         ),
         'P' => 
         array (
-            'Prophecy\\' => 
+            'PEAR' => 
             array (
-                0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+                0 => __DIR__ . '/..' . '/pear/pear_exception',
             ),
         ),
         'E' => 
         array (
-            'Egulias\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/egulias/email-validator/src',
-            ),
             'EasyRdf_' => 
             array (
                 0 => __DIR__ . '/..' . '/easyrdf/easyrdf/lib',
@@ -626,10 +644,6 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
             array (
                 0 => __DIR__ . '/..' . '/drupal/coder/coder_sniffer/DrupalPractice',
             ),
-            'Doctrine\\Common\\Lexer\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
-            ),
             'Dflydev\\PlaceholderResolver' => 
             array (
                 0 => __DIR__ . '/..' . '/dflydev/placeholder-resolver/src',
@@ -643,6 +657,24 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
                 0 => __DIR__ . '/..' . '/dflydev/dot-access-configuration/src',
             ),
         ),
+        'C' => 
+        array (
+            'Console' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear/console_getopt',
+            ),
+        ),
+        'A' => 
+        array (
+            'Archive_Tar' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear/archive_tar',
+            ),
+        ),
+    );
+
+    public static $fallbackDirsPsr0 = array (
+        0 => __DIR__ . '/..' . '/pear/pear-core-minimal/src',
     );
 
     public static $classMap = array (
@@ -1212,6 +1244,7 @@ class ComposerStaticInitbc40ff7b23e185c18f1be212e824c900
             $loader->prefixLengthsPsr4 = ComposerStaticInitbc40ff7b23e185c18f1be212e824c900::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitbc40ff7b23e185c18f1be212e824c900::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitbc40ff7b23e185c18f1be212e824c900::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInitbc40ff7b23e185c18f1be212e824c900::$fallbackDirsPsr0;
             $loader->classMap = ComposerStaticInitbc40ff7b23e185c18f1be212e824c900::$classMap;
 
         }, null, ClassLoader::class);
