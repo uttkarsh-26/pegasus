@@ -12,6 +12,7 @@
 namespace Symfony\Component\DomCrawler\Tests;
 
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\DomCrawler\Field\TextareaFormField;
 use Symfony\Component\DomCrawler\Form;
 use Symfony\Component\DomCrawler\FormFieldRegistry;
 
@@ -39,14 +40,14 @@ class FormTest extends TestCase
         $nodes = $dom->getElementsByTagName('input');
 
         try {
-            $form = new Form($nodes->item(0), 'http://example.com');
+            new Form($nodes->item(0), 'http://example.com');
             $this->fail('__construct() throws a \\LogicException if the node has no form ancestor');
         } catch (\LogicException $e) {
             $this->assertTrue(true, '__construct() throws a \\LogicException if the node has no form ancestor');
         }
 
         try {
-            $form = new Form($nodes->item(1), 'http://example.com');
+            new Form($nodes->item(1), 'http://example.com');
             $this->fail('__construct() throws a \\LogicException if the input type is not submit, button, or image');
         } catch (\LogicException $e) {
             $this->assertTrue(true, '__construct() throws a \\LogicException if the input type is not submit, button, or image');
@@ -55,7 +56,7 @@ class FormTest extends TestCase
         $nodes = $dom->getElementsByTagName('button');
 
         try {
-            $form = new Form($nodes->item(0), 'http://example.com');
+            new Form($nodes->item(0), 'http://example.com');
             $this->fail('__construct() throws a \\LogicException if the node has no form ancestor');
         } catch (\LogicException $e) {
             $this->assertTrue(true, '__construct() throws a \\LogicException if the node has no form ancestor');
@@ -63,11 +64,19 @@ class FormTest extends TestCase
     }
 
     /**
-     * __construct() should throw \\LogicException if the form attribute is invalid.
+     * @dataProvider constructorThrowsExceptionIfNoRelatedFormProvider
+     *
+     * __construct() should throw a \LogicException if the form attribute is invalid.
      */
-    public function testConstructorThrowsExceptionIfNoRelatedForm()
+    public function testConstructorThrowsExceptionIfNoRelatedForm(\DOMElement $node)
     {
         $this->expectException('LogicException');
+
+        new Form($node, 'http://example.com');
+    }
+
+    public function constructorThrowsExceptionIfNoRelatedFormProvider()
+    {
         $dom = new \DOMDocument();
         $dom->loadHTML('
             <html>
@@ -81,8 +90,10 @@ class FormTest extends TestCase
 
         $nodes = $dom->getElementsByTagName('input');
 
-        $form = new Form($nodes->item(0), 'http://example.com');
-        $form = new Form($nodes->item(1), 'http://example.com');
+        return [
+            [$nodes->item(0)],
+            [$nodes->item(1)],
+        ];
     }
 
     public function testConstructorLoadsOnlyFieldsOfTheRightForm()
@@ -148,12 +159,12 @@ class FormTest extends TestCase
     public function testMultiValuedFields()
     {
         $form = $this->createForm('<form>
-            <input type="text" name="foo[4]" value="foo" disabled="disabled" />
-            <input type="text" name="foo" value="foo" disabled="disabled" />
-            <input type="text" name="foo[2]" value="foo" disabled="disabled" />
-            <input type="text" name="foo[]" value="foo" disabled="disabled" />
-            <input type="text" name="bar[foo][]" value="foo" disabled="disabled" />
-            <input type="text" name="bar[foo][foobar]" value="foo" disabled="disabled" />
+            <input type="text" name="foo[4]" value="foo" />
+            <input type="text" name="foo" value="foo" />
+            <input type="text" name="foo[2]" value="foo" />
+            <input type="text" name="foo[]" value="foo" />
+            <input type="text" name="bar[foo][]" value="foo" />
+            <input type="text" name="bar[foo][foobar]" value="foo" />
             <input type="submit" />
         </form>
         ');
@@ -216,10 +227,10 @@ class FormTest extends TestCase
                 [],
             ],
             [
-                'takes into account disabled input fields',
+                'skips disabled input fields',
                 '<input type="text" name="foo" value="foo" disabled="disabled" />
                  <input type="submit" />',
-                ['foo' => ['InputFormField', 'foo']],
+                [],
             ],
             [
                 'appends the submitted button value',
@@ -943,7 +954,7 @@ class FormTest extends TestCase
         return $dom;
     }
 
-    public function testgetPhpValuesWithEmptyTextarea()
+    public function testGetPhpValuesWithEmptyTextarea()
     {
         $dom = new \DOMDocument();
         $dom->loadHTML('
@@ -957,5 +968,35 @@ class FormTest extends TestCase
         $nodes = $dom->getElementsByTagName('form');
         $form = new Form($nodes->item(0), 'http://example.com');
         $this->assertEquals($form->getPhpValues(), ['example' => '']);
+    }
+
+    public function testGetReturnTypes()
+    {
+        $dom = new \DOMDocument();
+        $dom->loadHTML('
+            <html>
+                <form>
+                    <textarea name="foo[collection][0][bar]">item 0</textarea>
+                </form>
+            </html>'
+        );
+
+        $nodes = $dom->getElementsByTagName('form');
+        $form = new Form($nodes->item(0), 'http://example.com');
+
+        // FormField
+        $this->assertInstanceOf(TextareaFormField::class, $textareaFormField = $form->get('foo[collection][0][bar]'));
+
+        // Array of FormField
+        $this->assertSame([
+            'bar' => $textareaFormField,
+        ], $form->get('foo[collection][0]'));
+
+        // Array of array of FormField
+        $this->assertSame([
+            [
+                'bar' => $textareaFormField,
+            ],
+        ], $form->get('foo[collection]'));
     }
 }
